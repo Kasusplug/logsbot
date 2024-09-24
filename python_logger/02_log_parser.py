@@ -23,7 +23,7 @@ class Logs:
                 print('Succesfully get NOK logs')
 
     def nok_logs_counter(self):
-        with open('.\\dz-9\\logs.txt', 'w', encoding='utf8') as new_logs:
+        with open('python_logger\logs.txt', 'w', encoding='utf8') as new_logs:
             for timestamp, count in self.logs_time_count.items():
                 new_logs.write(f"[{timestamp}] {count}" + '\n')
             print('Succesfully counted logs')
@@ -58,8 +58,8 @@ class Logs:
         return [print(f"Year: {year}, Quantity: {count}")
                  for hour, count in self.years_count.items()]
 
-check_logs = Logs(file_name_read='dz-9\\events.txt',
-                   file_name_record='.\\dz-9\\logs.txt')
+check_logs = Logs(file_name_read='python_logger\events.txt',
+                   file_name_record='python_logger\logs.txt')
 check_logs.nok_logs()
 check_logs.nok_logs_counter()
 check_logs.hours_stats()
