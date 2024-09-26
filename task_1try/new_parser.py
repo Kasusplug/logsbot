@@ -9,9 +9,9 @@ class Logs:
         self.logs_time_count_info = {}
         self.logs_time_count_error = {}
         self.logs_time_count_debug = {}
-        self.count_info = 0
-        self.count_error = 0
-        self.count_debug = 0
+        self.count_info = {msg: 0 for msg in info_output}
+        self.count_error = {msg: 0 for msg in error_output}
+        self.count_debug = {msg: 0 for msg in debug_output}
 
     def logs_find(self):
         with open(self.file_name_read, 'r', encoding='utf8') as logs_events:
@@ -58,18 +58,29 @@ class Logs:
                 for line in read_logs:
                     line = line.strip()
 
-                    if any(info in line for info in info_output):
-                        self.count_info += 1
-                    elif any(error in line for error in error_output):
-                        self.count_error += 1
-                    elif any(debug in line for debug in debug_output):
-                        self.count_debug += 1
+                    for info in info_output:
+                        if info in line:
+                            self.count_info[info] += 1
+                    for error in error_output:
+                        if error in line:
+                            self.count_error[error] += 1
+                    for debug in debug_output:
+                        if debug in line:
+                            self.count_debug[debug] += 1
 
-                counted_logs.write(f"[INFO] logs count: {self.count_info}\n")
-                counted_logs.write(f"[ERROR] logs count: {self.count_debug}\n")
-                counted_logs.write(f"[DEBUG] logs count: {self.count_error}\n")
+                counted_logs.write("INFO logs count:\n")
+                for info, count in self.count_info.items():
+                    counted_logs.write(f"{info}: {count}\n")
 
-        print("Log counts successfully written to file")
+                counted_logs.write("\nERROR logs count:\n")
+                for error, count in self.count_error.items():
+                    counted_logs.write(f"{error}: {count}\n")
+
+                counted_logs.write("\nDEBUG logs count:\n")
+                for debug, count in self.count_debug.items():
+                    counted_logs.write(f"{debug}: {count}\n")
+
+        print("whole outputs was counted successfully and written to file")
 
 check_logs = Logs(file_name_read=r'task_1try\logs.log',
                    file_name_record=r'task_1try\cathed_logs.log')
