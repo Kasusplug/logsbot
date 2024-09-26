@@ -1,3 +1,6 @@
+from whole_outputs import info_output, error_output, debug_output
+
+
 class Logs:
 
     def __init__(self, file_name_read, file_name_record):
@@ -6,6 +9,9 @@ class Logs:
         self.logs_time_count_info = {}
         self.logs_time_count_error = {}
         self.logs_time_count_debug = {}
+        self.count_info = 0
+        self.count_error = 0
+        self.count_debug = 0
 
     def logs_find(self):
         with open(self.file_name_read, 'r', encoding='utf8') as logs_events:
@@ -45,8 +51,29 @@ class Logs:
                 new_logs.write(f"  {timestamp} - {count}" + '\n')
             print('Succesfully counted ALL logs')
 
+
+    def logs_compile(self):
+        with open(r'task_1try\cathed_logs.log', 'r', encoding='utf8') as read_logs:
+            with open(r'task_1try\counted.log', 'w', encoding='utf8') as counted_logs:
+                for line in read_logs:
+                    line = line.strip()
+
+                    if any(info in line for info in info_output):
+                        self.count_info += 1
+                    elif any(error in line for error in error_output):
+                        self.count_error += 1
+                    elif any(debug in line for debug in debug_output):
+                        self.count_debug += 1
+
+                counted_logs.write(f"[INFO] logs count: {self.count_info}\n")
+                counted_logs.write(f"[ERROR] logs count: {self.count_debug}\n")
+                counted_logs.write(f"[DEBUG] logs count: {self.count_error}\n")
+
+        print("Log counts successfully written to file")
+
 check_logs = Logs(file_name_read=r'task_1try\logs.log',
                    file_name_record=r'task_1try\cathed_logs.log')
 check_logs.logs_find()
 check_logs.logs_counter()
+check_logs.logs_compile()
 
