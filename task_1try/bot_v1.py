@@ -6,6 +6,7 @@ import subprocess
 import time
 import threading
 import psutil
+from new_parser import Logs
 
 load_dotenv(r'C:\Users\kasus\Desktop\pythonapps\logsbot\task_1try\data.env')
 
@@ -36,19 +37,24 @@ def stop_generation_logs():
         log_processing = None
 
 
-#в исходном коде го логи обновляются бесконечно c учетом моего кода здесь для более  рандомной генерации добавлено ожидание 
+#для более рандомной генерации добавлено ожидание 
 def delayed_stop_logs(chat_id):
     time.sleep(5)
     stop_generation_logs()
-    bot.send_message(chat_id, 'Генерация логов завершена.к')
+    bot.send_message(chat_id, 'Генерация логов завершена.')
 
 
 @bot.message_handler(commands=['start'])
 def start_bot(message):
-    bot.send_message(message.chat.id, f'Hello!, {message.from_user.username}, this bot was created to easily control all logs')
+    bot.send_message(message.chat.id, f"Привет!, {message.from_user.username} \n"
+                    "Этот бот разработан специально для команды ВК=)\n"
+                    "В данном боте доступны команды для получения логов и статистики по ним\n"
+                    "На данный момент доступны следующие комманды:\n"
+                    "/start - команда которая вызывает данное сообщение\n"
+                    "/generate - пока что генерирует логи(в работе над более адекватным вариантом комманд)\n")
 
 
-@bot.message_handler(commands=['test'])
+@bot.message_handler(commands=['generate'])
 def test(message):
     markup = types.InlineKeyboardMarkup()
     markup.add(types.InlineKeyboardButton('Сгенерировать логи', callback_data="generate_logs"))
