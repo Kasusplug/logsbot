@@ -5,6 +5,7 @@ from telebot import types
 import subprocess
 import time
 import threading
+import psutil
 
 load_dotenv(r'C:\Users\kasus\Desktop\pythonapps\logsbot\task_1try\data.env')
 
@@ -12,6 +13,7 @@ TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 
+#переменная в которой работает процесс с файлом голанг на всех этапах
 log_processing = None
 
 
@@ -23,8 +25,14 @@ def start_generation_logs():
 def stop_generation_logs():
     global log_processing
     if log_processing:
-        log_processing.terminate()  
-        log_processing.wait()  
+        parent = psutil.Process(log_processing.pid)
+
+        for child in parent.children(recursive=True):
+            child.kill()
+
+        log_processing.kill()
+        log_processing.wait()
+
         log_processing = None
 
 
@@ -32,7 +40,7 @@ def stop_generation_logs():
 def delayed_stop_logs(chat_id):
     time.sleep(5)
     stop_generation_logs()
-    bot.send_message(chat_id, 'Генерация логов завершена.')
+    bot.send_message(chat_id, 'Генерация логов завершена.к')
 
 
 @bot.message_handler(commands=['start'])
