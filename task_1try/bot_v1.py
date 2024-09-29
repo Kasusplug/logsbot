@@ -17,12 +17,12 @@ bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 #переменная в которой работает процесс с файлом голанг на всех этапах
 log_processing = None
 
-
+#стартуем файл го 
 def start_generation_logs():
     global log_processing
     log_processing = subprocess.Popen(["go", "run", r"C:\Users\kasus\Desktop\pythonapps\logsbot\go_logger\task.go"])
 
-
+#завершаем родительские и дочерние процессы(без этой функции код го работает бесконечно)
 def stop_generation_logs():
     global log_processing
     if log_processing:
@@ -51,11 +51,16 @@ def start_bot(message):
                     "В данном боте доступны команды для получения логов и статистики по ним\n"
                     "На данный момент доступны следующие комманды:\n"
                     "/start - команда которая вызывает данное сообщение\n"
-                    "/generate - пока что генерирует логи(в работе над более адекватным вариантом комманд)\n")
+                    "/generate - пока что генерирует логи\n"
+                    "/count - производит все операции по подсчету и компиляции всех вариантов логов \n"
+                    "/show_all - показывает все логи\n"
+                    "/show_counted - показывает все логи по их количеству в генерации\n"
+                    "/show_error - показывает только логи с тегом error\n"
+                    "/show_counted_error - показывает посчитанные логи с тегом error\n")
 
 
 @bot.message_handler(commands=['generate'])
-def test(message):
+def generate(message):
     markup = types.InlineKeyboardMarkup()
     markup.add(types.InlineKeyboardButton('Сгенерировать логи', callback_data="generate_logs"))
     bot.send_message(message.chat.id, f'Для генерации логов нажмите на кнопку.', reply_markup=markup)
@@ -66,6 +71,29 @@ def handle_logs(call):
     start_generation_logs()
     bot.send_message(call.message.chat.id, "Логи генерируются.....")
     threading.Thread(target=delayed_stop_logs, args=(call.message.chat.id,)).start()
+
+
+# @bot.message_handler(commands=['count'])
+# def count(message):
+#     check_logs = Logs(
+#     file_name_read=r'C:\Users\kasus\Desktop\pythonapps\logsbot\task_1try\logs.log',
+#     file_name_record=r'C:\Users\kasus\Desktop\pythonapps\logsbot\task_1try\catched_logs.log'
+# )
+
+#     check_logs.logs_find()
+#     check_logs.logs_counter()
+#     check_logs.logs_compile()
+#     check_logs.error_logs_write()
+#     check_logs.counted_error_logs_write()
+#     markup_show_all = types.InlineKeyboardMarkup()
+#     markup_show_counted = types.InlineKeyboardMarkup()
+#     markup_show_error = types.InlineKeyboardMarkup()
+#     markup_show_counted_error = types.InlineKeyboardMarkup()
+#     markup_show_all.add(types.InlineKeyboardButton('Показать все логи', callback_data="show_all"))
+#     markup_show_counted.add(types.InlineKeyboardButton('Показать количество логов', callback_data="show_all"))
+#     markup_show_error.add(types.InlineKeyboardButton('Показать только логи error', callback_data="show_all"))
+#     markup_show_counted_error.add(types.InlineKeyboardButton('Показать количество логов error', callback_data="show_all"))
+#     bot.send_message(message.chat.id, 'Все подсчеты логов выполнены', reply_markup=[markup_show_all, markup_show_counted, markup_show_counted_error, markup_show_error])
 
 
 bot.polling()

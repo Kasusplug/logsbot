@@ -99,8 +99,11 @@ class Logs:
                         error_counted_logs.write(error_log)
 
 
-check_logs = Logs(file_name_read=r'task_1try\logs.log',
-                   file_name_record=r'task_1try\catched_logs.log')
+check_logs = Logs(
+    file_name_read=r'C:\Users\kasus\Desktop\pythonapps\logsbot\task_1try\logs.log',
+    file_name_record=r'C:\Users\kasus\Desktop\pythonapps\logsbot\task_1try\catched_logs.log'
+)
+
 check_logs.logs_find()
 check_logs.logs_counter()
 check_logs.logs_compile()

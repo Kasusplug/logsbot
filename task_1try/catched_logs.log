@@ -1,82 +1,100 @@
-  2024-09-28T17:34:42+03:00 [INFO] File uploaded - 1
-  2024-09-28T17:34:42+03:00 [INFO] Database connection established - 1
-  2024-09-28T17:38:33+03:00 [INFO] File uploaded - 1
-  2024-09-28T17:38:33+03:00 [INFO] Database connection established - 1
-  2024-09-28T17:38:34+03:00 [INFO] User logged in - 1
-  2024-09-28T17:38:34+03:00 [INFO] File uploaded - 1
-  2024-09-28T17:38:34+03:00 [INFO] User logged out - 1
-  2024-09-28T17:38:35+03:00 [INFO] File uploaded - 1
-  2024-09-28T17:38:35+03:00 [INFO] User logged out - 3
-  2024-09-28T17:38:35+03:00 [INFO] User logged in - 1
-  2024-09-28T17:38:36+03:00 [INFO] Invalid input received - 1
-  2024-09-28T17:38:36+03:00 [INFO] Database connection established - 1
-  2024-09-28T17:38:37+03:00 [INFO] Invalid input received - 1
-  2024-09-28T17:38:38+03:00 [INFO] Database connection established - 2
-  2024-09-28T17:38:51+03:00 [INFO] File uploaded - 2
-  2024-09-28T17:38:52+03:00 [INFO] File uploaded - 2
-  2024-09-28T17:38:52+03:00 [INFO] User logged in - 1
-  2024-09-28T17:38:53+03:00 [INFO] Error processing request - 2
-  2024-09-28T17:38:53+03:00 [INFO] Database connection established - 1
-  2024-09-28T17:38:53+03:00 [INFO] Invalid input received - 1
-  2024-09-28T17:38:55+03:00 [INFO] Invalid input received - 1
-  2024-09-28T17:38:55+03:00 [INFO] Error processing request - 1
-  2024-09-28T17:38:55+03:00 [INFO] Database connection established - 1
-  2024-09-28T17:34:42+03:00 [ERROR] File uploaded - 1
-  2024-09-28T17:34:42+03:00 [ERROR] User logged in - 1
-  2024-09-28T17:38:33+03:00 [ERROR] Invalid input received - 1
-  2024-09-28T17:38:33+03:00 [ERROR] User logged out - 1
-  2024-09-28T17:38:33+03:00 [ERROR] Database connection established - 2
-  2024-09-28T17:38:34+03:00 [ERROR] User logged in - 2
-  2024-09-28T17:38:34+03:00 [ERROR] Error processing request - 1
-  2024-09-28T17:38:34+03:00 [ERROR] File uploaded - 1
-  2024-09-28T17:38:35+03:00 [ERROR] Database connection established - 1
-  2024-09-28T17:38:35+03:00 [ERROR] Error processing request - 1
-  2024-09-28T17:38:36+03:00 [ERROR] File uploaded - 1
-  2024-09-28T17:38:36+03:00 [ERROR] User logged in - 1
-  2024-09-28T17:38:37+03:00 [ERROR] User logged out - 1
-  2024-09-28T17:38:37+03:00 [ERROR] Invalid input received - 1
-  2024-09-28T17:38:37+03:00 [ERROR] File uploaded - 1
-  2024-09-28T17:38:38+03:00 [ERROR] Invalid input received - 1
-  2024-09-28T17:38:51+03:00 [ERROR] Invalid input received - 1
-  2024-09-28T17:38:51+03:00 [ERROR] Error processing request - 1
-  2024-09-28T17:38:52+03:00 [ERROR] User logged in - 1
-  2024-09-28T17:38:52+03:00 [ERROR] Error processing request - 2
-  2024-09-28T17:38:52+03:00 [ERROR] Invalid input received - 1
-  2024-09-28T17:38:52+03:00 [ERROR] File uploaded - 1
-  2024-09-28T17:38:53+03:00 [ERROR] Invalid input received - 1
-  2024-09-28T17:38:53+03:00 [ERROR] User logged in - 1
-  2024-09-28T17:38:53+03:00 [ERROR] Database connection established - 1
-  2024-09-28T17:38:54+03:00 [ERROR] File uploaded - 1
-  2024-09-28T17:38:54+03:00 [ERROR] Error processing request - 1
-  2024-09-28T17:38:55+03:00 [ERROR] File uploaded - 2
-  2024-09-28T17:34:42+03:00 [DEBUG] User logged in - 1
-  2024-09-28T17:38:34+03:00 [DEBUG] User logged in - 1
-  2024-09-28T17:38:34+03:00 [DEBUG] User logged out - 1
-  2024-09-28T17:38:34+03:00 [DEBUG] Database connection established - 1
-  2024-09-28T17:38:35+03:00 [DEBUG] File uploaded - 1
-  2024-09-28T17:38:35+03:00 [DEBUG] User logged out - 2
-  2024-09-28T17:38:36+03:00 [DEBUG] User logged in - 1
-  2024-09-28T17:38:36+03:00 [DEBUG] Database connection established - 2
-  2024-09-28T17:38:36+03:00 [DEBUG] Invalid input received - 1
-  2024-09-28T17:38:36+03:00 [DEBUG] File uploaded - 1
-  2024-09-28T17:38:37+03:00 [DEBUG] Database connection established - 2
-  2024-09-28T17:38:37+03:00 [DEBUG] User logged in - 1
-  2024-09-28T17:38:37+03:00 [DEBUG] User logged out - 1
-  2024-09-28T17:38:37+03:00 [DEBUG] Error processing request - 1
-  2024-09-28T17:38:37+03:00 [DEBUG] File uploaded - 1
-  2024-09-28T17:38:38+03:00 [DEBUG] Database connection established - 1
-  2024-09-28T17:38:51+03:00 [DEBUG] User logged in - 1
-  2024-09-28T17:38:51+03:00 [DEBUG] File uploaded - 2
-  2024-09-28T17:38:51+03:00 [DEBUG] Error processing request - 1
-  2024-09-28T17:38:52+03:00 [DEBUG] Error processing request - 1
-  2024-09-28T17:38:52+03:00 [DEBUG] Database connection established - 1
-  2024-09-28T17:38:53+03:00 [DEBUG] Invalid input received - 1
-  2024-09-28T17:38:53+03:00 [DEBUG] User logged in - 1
-  2024-09-28T17:38:54+03:00 [DEBUG] User logged in - 2
-  2024-09-28T17:38:54+03:00 [DEBUG] User logged out - 3
-  2024-09-28T17:38:54+03:00 [DEBUG] Invalid input received - 1
-  2024-09-28T17:38:54+03:00 [DEBUG] File uploaded - 1
-  2024-09-28T17:38:54+03:00 [DEBUG] Error processing request - 1
-  2024-09-28T17:38:55+03:00 [DEBUG] File uploaded - 1
-  2024-09-28T17:38:55+03:00 [DEBUG] Invalid input received - 2
-  2024-09-28T17:38:55+03:00 [DEBUG] Database connection established - 1
+2024-09-28T17:34:42+03:00 [INFO] File uploaded
+2024-09-28T17:34:42+03:00 [ERROR] File uploaded
+2024-09-28T17:34:42+03:00 [ERROR] User logged in
+2024-09-28T17:34:42+03:00 [DEBUG] User logged in
+2024-09-28T17:34:42+03:00 [INFO] Database connection established
+2024-09-28T17:38:33+03:00 [ERROR] Invalid input received
+2024-09-28T17:38:33+03:00 [INFO] File uploaded
+2024-09-28T17:38:33+03:00 [INFO] Database connection established
+2024-09-28T17:38:33+03:00 [ERROR] User logged out
+2024-09-28T17:38:33+03:00 [ERROR] Database connection established
+2024-09-28T17:38:33+03:00 [ERROR] Database connection established
+2024-09-28T17:38:34+03:00 [ERROR] User logged in
+2024-09-28T17:38:34+03:00 [INFO] User logged in
+2024-09-28T17:38:34+03:00 [DEBUG] User logged in
+2024-09-28T17:38:34+03:00 [DEBUG] User logged out
+2024-09-28T17:38:34+03:00 [ERROR] User logged in
+2024-09-28T17:38:34+03:00 [DEBUG] Database connection established
+2024-09-28T17:38:34+03:00 [ERROR] Error processing request
+2024-09-28T17:38:34+03:00 [ERROR] File uploaded
+2024-09-28T17:38:34+03:00 [INFO] File uploaded
+2024-09-28T17:38:34+03:00 [INFO] User logged out
+2024-09-28T17:38:35+03:00 [DEBUG] File uploaded
+2024-09-28T17:38:35+03:00 [DEBUG] User logged out
+2024-09-28T17:38:35+03:00 [INFO] File uploaded
+2024-09-28T17:38:35+03:00 [INFO] User logged out
+2024-09-28T17:38:35+03:00 [INFO] User logged in
+2024-09-28T17:38:35+03:00 [DEBUG] User logged out
+2024-09-28T17:38:35+03:00 [ERROR] Database connection established
+2024-09-28T17:38:35+03:00 [ERROR] Error processing request
+2024-09-28T17:38:35+03:00 [INFO] User logged out
+2024-09-28T17:38:35+03:00 [INFO] User logged out
+2024-09-28T17:38:36+03:00 [INFO] Invalid input received
+2024-09-28T17:38:36+03:00 [ERROR] File uploaded
+2024-09-28T17:38:36+03:00 [DEBUG] User logged in
+2024-09-28T17:38:36+03:00 [DEBUG] Database connection established
+2024-09-28T17:38:36+03:00 [DEBUG] Database connection established
+2024-09-28T17:38:36+03:00 [ERROR] User logged in
+2024-09-28T17:38:36+03:00 [DEBUG] Invalid input received
+2024-09-28T17:38:36+03:00 [INFO] Database connection established
+2024-09-28T17:38:36+03:00 [DEBUG] File uploaded
+2024-09-28T17:38:37+03:00 [ERROR] User logged out
+2024-09-28T17:38:37+03:00 [DEBUG] Database connection established
+2024-09-28T17:38:37+03:00 [DEBUG] User logged in
+2024-09-28T17:38:37+03:00 [DEBUG] User logged out
+2024-09-28T17:38:37+03:00 [ERROR] Invalid input received
+2024-09-28T17:38:37+03:00 [ERROR] File uploaded
+2024-09-28T17:38:37+03:00 [DEBUG] Database connection established
+2024-09-28T17:38:37+03:00 [DEBUG] Error processing request
+2024-09-28T17:38:37+03:00 [DEBUG] File uploaded
+2024-09-28T17:38:37+03:00 [INFO] Invalid input received
+2024-09-28T17:38:38+03:00 [INFO] Database connection established
+2024-09-28T17:38:38+03:00 [INFO] Database connection established
+2024-09-28T17:38:38+03:00 [DEBUG] Database connection established
+2024-09-28T17:38:38+03:00 [ERROR] Invalid input received
+2024-09-28T17:38:51+03:00 [DEBUG] User logged in
+2024-09-28T17:38:51+03:00 [ERROR] Invalid input received
+2024-09-28T17:38:51+03:00 [DEBUG] File uploaded
+2024-09-28T17:38:51+03:00 [DEBUG] Error processing request
+2024-09-28T17:38:51+03:00 [INFO] File uploaded
+2024-09-28T17:38:51+03:00 [INFO] File uploaded
+2024-09-28T17:38:51+03:00 [ERROR] Error processing request
+2024-09-28T17:38:51+03:00 [DEBUG] File uploaded
+2024-09-28T17:38:52+03:00 [ERROR] User logged in
+2024-09-28T17:38:52+03:00 [DEBUG] Error processing request
+2024-09-28T17:38:52+03:00 [INFO] File uploaded
+2024-09-28T17:38:52+03:00 [ERROR] Error processing request
+2024-09-28T17:38:52+03:00 [ERROR] Invalid input received
+2024-09-28T17:38:52+03:00 [ERROR] Error processing request
+2024-09-28T17:38:52+03:00 [INFO] File uploaded
+2024-09-28T17:38:52+03:00 [INFO] User logged in
+2024-09-28T17:38:52+03:00 [DEBUG] Database connection established
+2024-09-28T17:38:52+03:00 [ERROR] File uploaded
+2024-09-28T17:38:53+03:00 [INFO] Error processing request
+2024-09-28T17:38:53+03:00 [INFO] Error processing request
+2024-09-28T17:38:53+03:00 [DEBUG] Invalid input received
+2024-09-28T17:38:53+03:00 [ERROR] Invalid input received
+2024-09-28T17:38:53+03:00 [INFO] Database connection established
+2024-09-28T17:38:53+03:00 [ERROR] User logged in
+2024-09-28T17:38:53+03:00 [DEBUG] User logged in
+2024-09-28T17:38:53+03:00 [INFO] Invalid input received
+2024-09-28T17:38:53+03:00 [ERROR] Database connection established
+2024-09-28T17:38:54+03:00 [DEBUG] User logged in
+2024-09-28T17:38:54+03:00 [DEBUG] User logged out
+2024-09-28T17:38:54+03:00 [DEBUG] Invalid input received
+2024-09-28T17:38:54+03:00 [ERROR] File uploaded
+2024-09-28T17:38:54+03:00 [DEBUG] File uploaded
+2024-09-28T17:38:54+03:00 [DEBUG] User logged out
+2024-09-28T17:38:54+03:00 [ERROR] Error processing request
+2024-09-28T17:38:54+03:00 [DEBUG] Error processing request
+2024-09-28T17:38:54+03:00 [DEBUG] User logged in
+2024-09-28T17:38:54+03:00 [DEBUG] User logged out
+2024-09-28T17:38:55+03:00 [ERROR] File uploaded
+2024-09-28T17:38:55+03:00 [DEBUG] File uploaded
+2024-09-28T17:38:55+03:00 [DEBUG] Invalid input received
+2024-09-28T17:38:55+03:00 [DEBUG] Invalid input received
+2024-09-28T17:38:55+03:00 [INFO] Invalid input received
+2024-09-28T17:38:55+03:00 [INFO] Error processing request
+2024-09-28T17:38:55+03:00 [INFO] Database connection established
+2024-09-28T17:38:55+03:00 [ERROR] File uploaded
+2024-09-28T17:38:55+03:00 [DEBUG] Database connection established
