@@ -14,8 +14,8 @@ class Logs:
         self.count_debug = {msg: 0 for msg in debug_output}
 
     def logs_find(self):
-        with open(self.file_name_read, 'r', encoding='utf8') as logs_events:
-            with open(self.file_name_record, 'w', encoding='utf8') as new_logs:        
+        with open(self.file_name_read, 'r', encoding='utf-8') as logs_events:
+            with open(self.file_name_record, 'w', encoding='utf-8') as new_logs:        
                 for line in logs_events:
                     line = line.strip()
                     if "[INFO]" in line:
@@ -42,7 +42,7 @@ class Logs:
                 print('Successfully processed all logs')
     
     def logs_counter(self):
-        with open(r'task_1try\catched_logs.log', 'w', encoding='utf8') as new_logs:
+        with open(r'task_1try\catched_logs.log', 'w', encoding='utf-8') as new_logs:
             for timestamp, count in self.logs_time_count_info.items():
                 new_logs.write(f"  {timestamp} - {count}" + '\n')
             for timestamp, count in self.logs_time_count_error.items():
@@ -53,8 +53,8 @@ class Logs:
 
 
     def logs_compile(self):
-        with open(r'task_1try\catched_logs.log', 'r', encoding='utf8') as read_logs:
-            with open(r'task_1try\counted.log', 'w', encoding='utf8') as counted_logs:
+        with open(r'task_1try\catched_logs.log', 'r', encoding='utf-8') as read_logs:
+            with open(r'task_1try\counted.log', 'w', encoding='utf-8') as counted_logs:
                 for line in read_logs:
                     line = line.strip()
 
@@ -84,16 +84,16 @@ class Logs:
 
 
     def error_logs_write(self):
-        with open(r'task_1try\catched_logs.log', 'r', encoding='utf8') as read_logs:
-            with open(r'task_1try\error.log', 'w', encoding='utf8') as error_logs:
+        with open(r'task_1try\catched_logs.log', 'r', encoding='utf-8') as read_logs:
+            with open(r'task_1try\error.log', 'w', encoding='utf-8') as error_logs:
                 for error_log in read_logs:
                     if '[ERROR]' in error_log:
                         error_logs.write(error_log)
 
 
     def counted_error_logs_write(self):
-        with open(r'task_1try\counted.log', 'r', encoding='utf8') as counted_logs:
-            with open(r'task_1try\error_counted.log', 'w', encoding='utf8') as error_counted_logs:
+        with open(r'task_1try\counted.log', 'r', encoding='utf-8') as counted_logs:
+            with open(r'task_1try\error_counted.log', 'w', encoding='utf-8') as error_counted_logs:
                 for error_log in counted_logs:
                     if '[ERROR]' in error_log:
                         error_counted_logs.write(error_log)
