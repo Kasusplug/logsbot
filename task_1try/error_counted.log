@@ -1,6 +1,6 @@
-[ERROR] User logged in: 6
-[ERROR] User logged out: 8
-[ERROR] Database connection established: 6
-[ERROR] Invalid input received: 3
-[ERROR] Error processing request: 5
-[ERROR] File uploaded: 3
+[ERROR] User logged in: 3
+[ERROR] User logged out: 6
+[ERROR] Database connection established: 4
+[ERROR] Invalid input received: 5
+[ERROR] Error processing request: 8
+[ERROR] File uploaded: 4

@@ -161,7 +161,7 @@ def start_bot(message):
 
 
 def create_log_buttons(chat_id):
-    markup = types.InlineKeyboardMarkup()
+    markup = types.InlineKeyboardMarkup(row_width=2)
     markup.add(
         types.InlineKeyboardButton('Показать все логи', callback_data="show_all"),
         types.InlineKeyboardButton('Показать количество логов', callback_data="show_counted"),
@@ -197,7 +197,7 @@ def count(message):
     check_logs.logs_compile()
     check_logs.error_logs_write()
     check_logs.counted_error_logs_write()
-    markup = types.InlineKeyboardMarkup()
+    markup = types.InlineKeyboardMarkup(row_width=2)
     markup.add(
     types.InlineKeyboardButton('Показать все логи', callback_data="show_all"),
     types.InlineKeyboardButton('Показать количество логов', callback_data="show_counted"),
@@ -213,7 +213,11 @@ def handle_query(call):
         if call.data == "show_all":
             with open(r'C:\Users\kasus\Desktop\pythonapps\logsbot\task_1try\catched_logs.log', 'r') as catched_logs:
                 logs = catched_logs.read()
-                bot.send_message(call.message.chat.id, logs)
+                with open('temp_all_logs.txt', 'w') as temp_file:
+                    temp_file.write(logs)
+                with open('temp_all_logs.txt', 'rb') as temp_file:
+                    bot.send_message(call.message.chat.id, "Добавляю файл так как он довольно большой...")
+                    bot.send_document(call.message.chat.id, temp_file)
     
         elif call.data == "show_counted":
             with open(r"C:\Users\kasus\Desktop\pythonapps\logsbot\task_1try\counted.log", 'r') as counted_logs:
