@@ -139,20 +139,23 @@ def stop_generation_logs():
 
 
 #для более рандомной генерации добавлено ожидание 
-def delayed_stop_logs(chat_id):
-    time.sleep(5)
-    stop_generation_logs()
-    bot.send_message(chat_id, 'Генерация логов завершена.')
+# def delayed_stop_logs(chat_id):
+#     time.sleep(5)
+#     stop_generation_logs()
+#     bot.send_message(chat_id, 'Генерация логов завершена.')
 
 
 @bot.message_handler(commands=['start'])
 def start_bot(message):
     markup = types.InlineKeyboardMarkup()
-    markup.add(types.InlineKeyboardButton('Сгенерировать логи', callback_data="generate_logs"))
+    markup.add(
+        types.InlineKeyboardButton('Сгенерировать логи', callback_data="generate_logs"),
+        types.InlineKeyboardButton('Подсчитать логи', callback_data="count_logs")  # Добавляем кнопку подсчета логов
+    )
     bot.send_message(message.chat.id, f"Привет!, {message.from_user.username} \n"
                     "Этот бот разработан специально для команды ВК=)\n"
                     "В данном боте доступны команды для получения логов и статистики по ним\n"
-                    "Для работы с ботом для началу нужно сгенерировать логи, далее воспользоваться коммандой /count\n"
+                    "Для работы с ботом для началу нужно сгенерировать логи, далее воспользоваться коммандой /count или нажать кнопку посчитать логи\n"
                     "Доступны следующие комманды:\n"
                     "/start - команда которая вызывает данное сообщение\n"
                     "/generate - генерирует новые логи\n"
@@ -161,6 +164,31 @@ def start_bot(message):
                     "/show_counted - показывает все логи по их количеству в генерации\n"
                     "/show_error - показывает только логи с тегом error\n"
                     "/show_counted_error - показывает посчитанные логи с тегом error\n", reply_markup=markup)
+
+
+def delayed_stop_logs_and_update(chat_id):
+    time.sleep(5)
+    stop_generation_logs()
+    bot.send_message(chat_id, 'Генерация логов завершена.')
+    
+    markup = types.InlineKeyboardMarkup()
+    markup.add(
+        types.InlineKeyboardButton('Сгенерировать логи', callback_data="generate_logs"),
+        types.InlineKeyboardButton('Подсчитать логи', callback_data="count_logs")
+    )
+    bot.send_message(chat_id, "Логи сгенерированы. Выберите действие:", reply_markup=markup)
+
+
+@bot.callback_query_handler(func=lambda call: call.data == "generate_logs")
+def handle_logs(call):
+    start_generation_logs()
+    bot.send_message(call.message.chat.id, "Логи генерируются.....")
+    threading.Thread(target=delayed_stop_logs_and_update, args=(call.message.chat.id,)).start()
+
+
+@bot.callback_query_handler(func=lambda call: call.data == "count_logs")
+def handle_count_logs(call):
+    count(call.message)
 
 
 def create_log_buttons(chat_id):
@@ -180,12 +208,6 @@ def generate(message):
     markup.add(types.InlineKeyboardButton('Сгенерировать логи', callback_data="generate_logs"))
     bot.send_message(message.chat.id, f'Для генерации логов нажмите на кнопку.', reply_markup=markup)
 
-
-@bot.callback_query_handler(func=lambda call: call.data == "generate_logs")
-def handle_logs(call):
-    start_generation_logs()
-    bot.send_message(call.message.chat.id, "Логи генерируются.....")
-    threading.Thread(target=delayed_stop_logs, args=(call.message.chat.id,)).start()
 
 
 @bot.message_handler(commands=['count'])

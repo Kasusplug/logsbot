@@ -1,23 +1,23 @@
 INFO logs count:
-[INFO] File uploaded: 5
-[INFO] Invalid input received: 4
+[INFO] File uploaded: 4
+[INFO] Invalid input received: 2
 [INFO] Database connection established: 5
-[INFO] Error processing request: 5
-[INFO] User logged in: 3
-[INFO] User logged out: 2
+[INFO] Error processing request: 6
+[INFO] User logged in: 4
+[INFO] User logged out: 3
 
 ERROR logs count:
-[ERROR] User logged in: 3
+[ERROR] User logged in: 4
 [ERROR] User logged out: 6
-[ERROR] Database connection established: 4
-[ERROR] Invalid input received: 5
+[ERROR] Database connection established: 5
+[ERROR] Invalid input received: 4
 [ERROR] Error processing request: 8
 [ERROR] File uploaded: 4
 
 DEBUG logs count:
-[DEBUG] Error processing request: 6
+[DEBUG] Error processing request: 8
 [DEBUG] Database connection established: 4
-[DEBUG] File uploaded: 7
-[DEBUG] User logged out: 8
-[DEBUG] Invalid input received: 3
-[DEBUG] User logged in: 8
+[DEBUG] File uploaded: 9
+[DEBUG] User logged out: 5
+[DEBUG] Invalid input received: 5
+[DEBUG] User logged in: 6
