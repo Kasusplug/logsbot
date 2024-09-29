@@ -147,9 +147,12 @@ def delayed_stop_logs(chat_id):
 
 @bot.message_handler(commands=['start'])
 def start_bot(message):
+    markup = types.InlineKeyboardMarkup()
+    markup.add(types.InlineKeyboardButton('Сгенерировать логи', callback_data="generate_logs"))
     bot.send_message(message.chat.id, f"Привет!, {message.from_user.username} \n"
                     "Этот бот разработан специально для команды ВК=)\n"
                     "В данном боте доступны команды для получения логов и статистики по ним\n"
+                    "Для работы с ботом для началу нужно сгенерировать логи, далее воспользоваться коммандой /count\n"
                     "На данный момент доступны следующие комманды:\n"
                     "/start - команда которая вызывает данное сообщение\n"
                     "/generate - пока что генерирует логи\n"
@@ -157,7 +160,7 @@ def start_bot(message):
                     "/show_all - показывает все логи\n"
                     "/show_counted - показывает все логи по их количеству в генерации\n"
                     "/show_error - показывает только логи с тегом error\n"
-                    "/show_counted_error - показывает посчитанные логи с тегом error\n")
+                    "/show_counted_error - показывает посчитанные логи с тегом error\n", reply_markup=markup)
 
 
 def create_log_buttons(chat_id):
