@@ -116,10 +116,6 @@ class Logs:
                         error_counted_logs.write(error_log)
 
 
-# check_logs = Logs(
-#     file_name_read=r'C:\Users\kasus\Desktop\pythonapps\logsbot\task_1try\logs.log',
-#     file_name_record=r'C:\Users\kasus\Desktop\pythonapps\logsbot\task_1try\catched_logs.log'
-# )
 
 
 #стартуем файл го 
@@ -162,6 +158,17 @@ def start_bot(message):
                     "/show_counted - показывает все логи по их количеству в генерации\n"
                     "/show_error - показывает только логи с тегом error\n"
                     "/show_counted_error - показывает посчитанные логи с тегом error\n")
+
+
+def create_log_buttons(chat_id):
+    markup = types.InlineKeyboardMarkup()
+    markup.add(
+        types.InlineKeyboardButton('Показать все логи', callback_data="show_all"),
+        types.InlineKeyboardButton('Показать количество логов', callback_data="show_counted"),
+        types.InlineKeyboardButton('Показать только логи error', callback_data="show_error"),
+        types.InlineKeyboardButton('Показать количество логов error', callback_data="show_counted_error")
+    )
+    bot.send_message(chat_id, 'Выберите опцию:', reply_markup=markup)
 
 
 @bot.message_handler(commands=['generate'])
@@ -222,6 +229,10 @@ def handle_query(call):
             with open(r"C:\Users\kasus\Desktop\pythonapps\logsbot\task_1try\error_counted.log", 'r') as error_counted:
                 logs = error_counted.read()
                 bot.send_message(call.message.chat.id, logs)
+
+        create_log_buttons(call.message.chat.id)
+
+        bot.answer_callback_query(call.id)
 
     except Exception as e:
         bot.send_message(call.message.chat.id, f'Ошибка: {e}')
