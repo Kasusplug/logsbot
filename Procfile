@@ -1,1 +1,1 @@
-worker: python bot_v2.py
+worker: python bot_v3_deploy.py
